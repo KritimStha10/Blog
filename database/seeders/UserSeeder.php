@@ -24,6 +24,31 @@ class UserSeeder extends Seeder
             'remember_token' => Str::random(60),
             'created_at' => Carbon::now(),
             'updated_at' => null
+
+        ]);
+
+        DB::table('users')->insert([
+            'name' => 'News Manager',
+            'email' => 'newsmanager@gmail.com',
+            'password' => Hash::make('newspassword'),
+            'status' => 1,
+            'user_type'=> 2,
+            'remember_token' => Str::random(60),
+            'created_at' => Carbon::now(),
+            'updated_at' => null
+
+        ]);
+
+        DB::table('users')->insert([
+            'name' => 'Blog Manager',
+            'email' => 'blogmanager@gmail.com',
+            'password' => Hash::make('blogpassword'),
+            'status' => 1,
+            'user_type'=> 3,
+            'remember_token' => Str::random(60),
+            'created_at' => Carbon::now(),
+            'updated_at' => null
+
         ]);
     }
 }

@@ -15,11 +15,12 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->longText('content');
-            $table->unsignedBigInteger('author_id'); 
+            $table->unsignedBigInteger('author_id');
             $table->unsignedBigInteger('category_id');
             $table->foreign('author_id')->references('id')->on('users');
             $table->foreign('category_id')->references('id')->on('categories');
             $table->timestamp('published_at')->nullable();
+            $table->enum('status', ['1','2'])->default(1);
             $table->timestamps();
         });
     }
